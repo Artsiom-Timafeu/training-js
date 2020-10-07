@@ -1,0 +1,14 @@
+{
+	"parser": "babel-eslint",
+	"extends": "standard",
+	"parserOptions": {
+		"ecmaVersion": 2019,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"es6": true
+	},
+	"root": false
+}
