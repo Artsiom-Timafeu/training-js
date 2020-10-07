@@ -8,12 +8,12 @@
 
 function toMachineName (name, separator) {
   const kebabString = name.replace(/\s/g, separator).toLowerCase().replace(/[,]/g, '')
-  console.log(kebabString)
+  return kebabString
 };
 
-toMachineName('Hello, my name is Andrew', '-')
-toMachineName('Lorem ipsum sit DOLOR', '-')
-toMachineName('3 basics and 1 advance', '-')
+console.log(toMachineName('Hello, my name is Andrew', '-'))
+console.log(toMachineName('Lorem ipsum sit DOLOR', '-'))
+console.log(toMachineName('3 basics and 1 advance', '-'))
 
 // Написать функцию formatCurrency(amount), которая будет преобразовывать число (или строковое представление числа) в следующий формат: тысячи, миллионы, миллиарды разделяются запятой, дробная часть отделяется точкой, причем она округляется до сотых долей в меньшую сторону. Примеры:
 // 1. 2546.2562 -> “2,546.25”
