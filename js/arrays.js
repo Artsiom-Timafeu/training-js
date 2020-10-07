@@ -10,7 +10,6 @@ function sumAverage (arr) {
   }
   return averagesBox.reduce((a, b) => a + b)
 };
-
 console.log(sumAverage([[1, 2, 2, 1], [2, 2, 2, 1], [2, 7, 8, 1]]))
 
 // 1. Вычислить среднее арифметическое каждого массива
