@@ -21,8 +21,8 @@ console.log(toMachineName('3 basics and 1 advance', '-'))
 // 3. 100.2134 -> “100.21”
 
 function formatCurrency (amount) {
-  const x = Math.floor((amount) * 100) / 100
-  const money = x.toLocaleString().replace(/,/g, '.').replace(/\s/g, ',')
+  const incomingAmounts = Math.floor((amount) * 100) / 100
+  const money = incomingAmounts.toLocaleString().replace(/,/g, '.').replace(/\s/g, ',')
   console.log(money)
 };
 
@@ -34,15 +34,21 @@ formatCurrency(100.2134)
 // 1. “The Holy Bible.” -> “BbeehHilloTy”
 // 2. “Hello!!!!!!!!!!!!!!!!!!!!!!” -> “eHllo”
 
-function alphabetized (text) {
-  const str = text.split('').sort(sortLetter).join('').replace(/(\.|!|\s)/g, '')
-  function sortLetter (a, b) {
-    if (a.toLowerCase() > b.toLowerCase()) { return 1 }
-    if (a.toLowerCase() < b.toLowerCase()) { return -1 } else { return 0 }
-  };
+// function alphabetized (text) {
+//   const str = text.split('').sort(sortLetter).join('').replace(/(\.|!|\s)/g, '')
+//   function sortLetter (a, b) {
+//     if (a.toLowerCase() > b.toLowerCase()) { return 1 }
+//     if (a.toLowerCase() < b.toLowerCase()) { return -1 } else { return 0 }
+//   };
 
+//   console.log(str)
+// }
+
+function alphabetized (text) {
+  const str = text.replace(/\.|,|!|\s/g, '').split('').sort()
   console.log(str)
 }
+
 alphabetized('The Holy Bible.')
 alphabetized('Hello!!!!!!!!!!!!!!!!!!!!!!')
 

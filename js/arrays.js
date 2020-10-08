@@ -30,3 +30,18 @@ console.log(maxTripletSum([3, 2, 6, 8, 8, 2, 3, 8]))
 // 2. Вычислить их сумму
 
 // ---
+
+// Написать функцию flattenAndSort(arr), которая принимает в качестве аргумент двумерный массив, состоящих из чисел. Функция возвращает отсортированный сведенный одномерный массив. Пример:
+// [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]] => [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function flattenAndSort (arr) {
+  const result = []
+  arr.forEach(loop1 => {
+    loop1.forEach(loop2 => {
+      result.push(loop2)
+    })
+  })
+  return result.sort()
+}
+
+console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
