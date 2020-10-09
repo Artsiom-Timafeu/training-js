@@ -52,6 +52,8 @@ function flattenAndSort (arr) {
 
 console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
 
+// Написать функцию diagonalSum, которая возвращает сумма значений элементов по диагонали с левого верхнего угла в нижний правый угол.
+
 const array = [
   [5, 9, 1, 0],
   [8, 7, 2, 3],
@@ -80,11 +82,9 @@ function replaceWithAlphPositions (text) {
     .replace(/\s|’|\./g, '')
     .toUpperCase()
     .split('')
-    textModifi.forEach(el => {
-    if (textModifi[''] === alhabetModifi['']) {
-      const modifi = alhabetModifi.indexOf(el)
-      indexBox.push(modifi)
-    }
+  textModifi.forEach(el => {
+    const modifi = alhabetModifi.indexOf(el)
+    indexBox.push(modifi)
   })
   return indexBox
 }
