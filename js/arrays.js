@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable no-tabs */
 'use strict'
 
@@ -20,8 +21,13 @@ console.log(sumAverage([[1, 2, 2, 1], [2, 2, 2, 1], [2, 7, 8, 1]]))
 // ---
 
 function maxTripletSum (arr) {
-  const max = arr.sort().filter((number, index) => arr.indexOf(number) === index)
-  return max.slice(-3).reduce((a, b) => a + b)
+  const max = arr
+    .sort()
+    .filter((number, index) => arr
+      .indexOf(number) === index)
+  return max
+    .slice(-3)
+    .reduce((a, b) => a + b)
 };
 
 console.log(maxTripletSum([3, 2, 6, 8, 8, 2, 3, 8]))
@@ -45,3 +51,42 @@ function flattenAndSort (arr) {
 }
 
 console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
+
+const array = [
+  [5, 9, 1, 0],
+  [8, 7, 2, 3],
+  [1, 4, 1, 9],
+  [2, 3, 8, 2]
+]
+
+function diagonalSum () {
+  return array.reduce((acc, value, index) => {
+    acc += value[index]
+    return acc
+  }, 0)
+}
+console.log(diagonalSum(array))
+
+// Написать функцию replaceWithAlphPositions, которая заменяет буквы на их позиции в алфавите (“a” = 1, “b” = 2 и так далее). Все остальные символы игнорируются. Примеры:
+// 1. “The sunset sets at twelve o’clock.” -> “20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11”
+
+function replaceWithAlphPositions (text) {
+  const indexBox = []
+  const alhabet = '-abcdefghijklmnopqrstuvwxyz'
+  const alhabetModifi = alhabet
+    .toUpperCase()
+    .split('')
+  const textModifi = text
+    .replace(/\s|’|\./g, '')
+    .toUpperCase()
+    .split('')
+    textModifi.forEach(el => {
+    if (textModifi[''] === alhabetModifi['']) {
+      const modifi = alhabetModifi.indexOf(el)
+      indexBox.push(modifi)
+    }
+  })
+  return indexBox
+}
+
+console.log(replaceWithAlphPositions('The sunset sets at twelve o’clock.'))

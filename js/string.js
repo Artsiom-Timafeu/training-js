@@ -7,7 +7,10 @@
 // 3. “3 basics and 1 advance” -> “basics-and-1-advance”
 
 function toMachineName (name, separator) {
-  const kebabString = name.replace(/\s/g, separator).toLowerCase().replace(/[,]/g, '')
+  const kebabString = name
+    .replace(/\s/g, separator)
+    .toLowerCase()
+    .replace(/[,]/g, '')
   return kebabString
 };
 
@@ -22,7 +25,10 @@ console.log(toMachineName('3 basics and 1 advance', '-'))
 
 function formatCurrency (amount) {
   const incomingAmounts = Math.floor((amount) * 100) / 100
-  const money = incomingAmounts.toLocaleString().replace(/,/g, '.').replace(/\s/g, ',')
+  const money = incomingAmounts
+    .toLocaleString()
+    .replace(/,/g, '.')
+    .replace(/\s/g, ',')
   console.log(money)
 };
 
@@ -45,7 +51,10 @@ formatCurrency(100.2134)
 // }
 
 function alphabetized (text) {
-  const str = text.replace(/\.|,|!|\s/g, '').split('').sort()
+  const str = text
+    .replace(/\.|,|!|\s/g, '')
+    .split('')
+    .sort()
   console.log(str)
 }
 
